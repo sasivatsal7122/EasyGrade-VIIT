@@ -15,8 +15,8 @@ loop = asyncio.new_event_loop()
 asyncio.set_event_loop(loop)
 
 def driver(uploaded_file):
-    tabula.convert_into(uploaded_file, "temporary.csv", output_format="csv", pages='all')
-    df = pd.read_csv('temporary.csv')
+    tabula.convert_into(uploaded_file, "temporaryy.csv", output_format="csv", pages='all')
+    df = pd.read_csv('temporaryy.csv')
     i = df[((df.Htno == 'Htno') &( df.Subcode == 'Subcode') & (df.Subname == 'Subname') & (df.Grade == 'Grade') & (df.Credits == 'Credits'))].index
     df.drop(i,inplace=True)
 
@@ -133,7 +133,7 @@ def driver(uploaded_file):
                 st.success('Message sent')
 
         with col2:
-            user_name = int(st.text_input('Enter Your Whatsapp Number: '))
+            user_name = (st.text_input('Enter Your Whatsapp Number: '))
             st.warning('Enter your whatsapp number WITHOUT the country code i.e +91')
             st.info("Note for Privacy Concern: No User Data will be stored in the server, it is deleted immediatley after prorgam terimination")
             sender = st.button('Send via Whatsapp')
