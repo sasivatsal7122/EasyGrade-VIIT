@@ -3,6 +3,5 @@ pandas
 Pillow
 pyTelegramBotAPI
 streamlit
-tabula
-tabula_py
+tabula-py
 Telethon
