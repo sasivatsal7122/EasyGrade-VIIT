@@ -1,0 +1,8 @@
+numpy
+pandas
+Pillow
+pyTelegramBotAPI
+streamlit
+tabula
+tabula_py
+Telethon
