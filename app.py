@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import tabula
-from tablua import *
+from tabula import convert_into
 from PIL import Image
 import telebot
 from telethon.sync import TelegramClient
