@@ -3,6 +3,15 @@ import pandas as pd
 import numpy as np
 import tabula
 from PIL import Image
+import telebot
+from telethon.sync import TelegramClient
+from telethon.tl.types import InputPeerUser, InputPeerChannel
+from telethon import TelegramClient, sync, events
+import telesender
+
+import asyncio
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
 
 def driver(uploaded_file):
     tabula.convert_into(uploaded_file, "temporary.csv", output_format="csv", pages='all')
@@ -109,6 +118,30 @@ def driver(uploaded_file):
         st.subheader('Average Semester percentage in class is '+str(avg_percentage)+'%')
         st.text('')
         st.header(f'You secured {stdu_rank} Rank in the class')
+        
+        col1,col2 = st.columns(2)
+        st.text('')
+        st.text('')
+        with col1:
+            user_name = str(st.text_input("Enter your Telegrame username without @: "))
+            st.warning('Telegram usernames are case sensitive, you can find your username in telegram setting -> username')
+            st.info("Note for Privacy Concern: No User Data will be stored in the server, it is deleted immediatley after prorgam terimination")
+            sender = st.button('Send via telegram')
+            if sender:
+                telesender.telesendmsg(message,user_name)
+                st.success('Message sent')
+
+        with col2:
+            user_name = int(st.text_input('Enter Your Whatsapp Number: '))
+            st.warning('Enter your whatsapp number WITHOUT the country code i.e +91')
+            st.info("Note for Privacy Concern: No User Data will be stored in the server, it is deleted immediatley after prorgam terimination")
+            sender = st.button('Send via Whatsapp')
+            if sender:
+                try:
+                    st.error("Functionality is still under bug fixing please try again later")
+                except:
+                    st.warning("An error occured, please try again")        
+        
         
         st.text('')
         st.subheader('Basic Stats:')
