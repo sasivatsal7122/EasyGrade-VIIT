@@ -15,8 +15,8 @@ loop = asyncio.new_event_loop()
 asyncio.set_event_loop(loop)
 
 def driver(uploaded_file):
-    tabula.convert_into(uploaded_file, "temporaryy.csv", output_format="csv", pages='all')
-    df = pd.read_csv('temporaryy.csv')
+    tabula.convert_into(uploaded_file, "temporary.csv", output_format="csv", pages='all')
+    df = pd.read_csv('temporary.csv')
     i = df[((df.Htno == 'Htno') &( df.Subcode == 'Subcode') & (df.Subname == 'Subname') & (df.Grade == 'Grade') & (df.Credits == 'Credits'))].index
     df.drop(i,inplace=True)
 
