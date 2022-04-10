@@ -120,10 +120,13 @@ def driver(uploaded_file):
         st.text('')
         st.header(f'You secured {stdu_rank} Rank in the class')
         
+        st.text('')
+        st.text('')
+        st.subheader("Want to send your marks as message ?")
         col1,col2 = st.columns(2)
-        st.text('')
-        st.text('')
+    
         with col1:
+            st.text('')
             user_name = str(st.text_input("Enter your Telegrame username without @: "))
             st.warning('Telegram usernames are case sensitive, you can find your username in telegram setting -> username')
             st.info("Note for Privacy Concern: No User Data will be stored in the server, it is deleted immediatley after prorgam terimination")
@@ -133,6 +136,7 @@ def driver(uploaded_file):
                 st.success('Message sent')
 
         with col2:
+            st.text('')
             user_name = (st.text_input('Enter Your Whatsapp Number: '))
             st.warning('Enter your whatsapp number WITHOUT the country code i.e +91')
             st.info("Note for Privacy Concern: No User Data will be stored in the server, it is deleted immediatley after prorgam terimination")
@@ -156,22 +160,20 @@ def driver(uploaded_file):
 
 def main():
     st.set_page_config(layout="wide")
-    col1,col2 = st.columns((1,4))
+    col1,col2 = st.columns((1,5))
     with col1:
         image = Image.open('Vignan_logo.png')
         st.image(image)
     with col2:
         st.markdown("<h1> Vignan's Institute of<span style = 'display: block;'> Information Technology</span> </h1>",unsafe_allow_html=True)
         st.caption("Re-accredited by NAAC with 'A++' Grade & NBA")
-    st.subheader('Welcome to Student Marks Analysis')
+    st.subheader('Welcome to Sem Grade Analysis')
     st.markdown("<p><TT>Designed and Developed by <a style='text-decoration:none;color:red' target='_blank' href='https://github.com/sasivatsal7122'>B.Sasi Vatsal</a></TT></p>", unsafe_allow_html=True)
     st.caption("20L31A5413 , Department of AI&DS")
-    uploaded_file = st.sidebar.file_uploader("Upload Results PDF:")
+    uploaded_file = st.sidebar.file_uploader("Upload Results PDF: ")
     if uploaded_file:
         driver(uploaded_file)
     
-
-
 
 if __name__=='__main__':
     main()
