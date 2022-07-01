@@ -8,7 +8,7 @@ def telesendmsg(message,user_name):
     api_hash = '373e9aa46c20e103167c5016d46a29a2'
     token = '5263589450:AAHwqvfkwmuhQZzoxaUsNM6SdTwETYcIgDc'
 
-    phone = '+1 917 397 5310'
+    phone = '+91 6281314789'
     client = TelegramClient('session', api_id, api_hash)
 
     client.connect()

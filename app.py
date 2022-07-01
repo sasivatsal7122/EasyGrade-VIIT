@@ -169,7 +169,7 @@ def main():
         st.caption("Re-accredited by NAAC with 'A++' Grade & NBA")
     st.subheader('Welcome to Sem Grade Analysis')
     st.markdown("<p><TT>Designed and Developed by <a style='text-decoration:none;color:red' target='_blank' href='https://github.com/sasivatsal7122'>Team - Elite</a></TT></p>", unsafe_allow_html=True)
-    st.caption("20L31A5413 , Department of AI&DS")
+    #st.caption("20L31A5413 , Department of AI&DS")
     uploaded_file = st.sidebar.file_uploader("Upload Results PDF: ")
     if uploaded_file:
         driver(uploaded_file)
