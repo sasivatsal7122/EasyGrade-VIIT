@@ -168,8 +168,8 @@ def main():
         st.markdown("<h1> Vignan's Institute of<span style = 'display: block;'> Information Technology</span> </h1>",unsafe_allow_html=True)
         st.caption("Re-accredited by NAAC with 'A++' Grade & NBA")
     st.subheader('Welcome to Sem Grade Analysis')
-    st.markdown("<p><TT>Designed and Developed by <a style='text-decoration:none;color:red' target='_blank' href='https://github.com/sasivatsal7122'>Team - Elite</a></TT></p>", unsafe_allow_html=True)
-    #st.caption("20L31A5413 , Department of AI&DS")
+    st.markdown("<p><TT>Designed and Developed by <a style='text-decoration:none;color:red' target='_blank' href='https://github.com/sasivatsal7122'>B.Sasi Vatsal</a></TT></p>", unsafe_allow_html=True)
+    st.caption("20L31A5413 , Department of AI&DS")
     uploaded_file = st.sidebar.file_uploader("Upload Results PDF: ")
     if uploaded_file:
         driver(uploaded_file)
